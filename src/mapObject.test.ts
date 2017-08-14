@@ -1,14 +1,17 @@
 'use strict';
 
 import 'jest';
-require('babel-core/register');
-require('babel-polyfill');
+// tslint:disable-next-line:no-unused-expression
+import 'babel-core/register';
+// tslint:disable-next-line:no-unused-expression
+import 'babel-polyfill';
 
 import mapObject from './mapObject';
 
 describe('mapObject', () => {
   const original = { first: 1, second: 2 };
-  let callback, result;
+  let callback;
+  let result;
 
   describe('callback use', () => {
     beforeEach(() => {

@@ -11,7 +11,7 @@ const { keys } = Object;
  */
 export default function eachProperty(
   object: {},
-  fn: (key: string, value: any) => any
+  fn: (key: string, value: any) => any,
 ): void {
   if (typeof object === 'object') {
     keys(object).forEach(function(key) {
