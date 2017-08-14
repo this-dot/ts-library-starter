@@ -78,7 +78,7 @@ For more code examples, checkout [src/set.test.ts](src/set.test.ts)
 `get` counterpart to `set`. It accepts a path array of strings or integers and returns value found that path. 
 
 ```ts
-set([ 'a', 0, 'b' ], { a: [ { b: 'c' }, { b: 'd' } ]});
+get([ 'a', 0, 'b' ], { a: [ { b: 'c' }, { b: 'd' } ]});
 //=> c
 ```
 
