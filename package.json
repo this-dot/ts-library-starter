@@ -1,9 +1,10 @@
 {
   "name": "ioo",
   "version": "0.1.2",
-  "description": "Example git project that is used for typescript libraries as a starter pack",
+  "description": "Immutable Object Operators",
   "main": "dist/main.js",
   "typings": "dist/main.d.ts",
+  "files": ["dist"],
   "jam": {
     "main": "./dist/main.browser.js"
   },
@@ -22,30 +23,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DxCx/ts-library-starter.git"
+    "url": "git+https://github.com/this-dot/ioo.git"
   },
-  "keywords": [
-    "example",
-    "typescript",
-    "library",
-    "starter",
-    "webpack",
-    "browserify",
-    "dts-bundle",
-    "package",
-    "tslint",
-    "jest",
-    "babel",
-    "tsloader",
-    "boilerplate",
-    "awesome-typescript-loader"
-  ],
+  "keywords": ["typescript", "library", "immutability", "utilities"],
   "author": "Hagai Cohen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DxCx/ts-library-starter/issues"
+    "url": "https://github.com/this-dot/ioo/issues"
   },
-  "homepage": "https://github.com/DxCx/ts-library-starter#readme",
+  "homepage": "https://github.com/this-dot/ioo#readme",
   "devDependencies": {
     "@types/jest": "^0.9.31",
     "@types/node": "^6.0.38",
@@ -73,10 +59,6 @@
     "scriptPreprocessor": "node_modules/typescript-babel-jest",
     "testEnvironment": "node",
     "testRegex": ".*\\.test\\.ts$",
-    "moduleFileExtensions": [
-      "ts",
-      "js",
-      "json"
-    ]
+    "moduleFileExtensions": ["ts", "js", "json"]
   }
 }
