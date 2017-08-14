@@ -1,10 +1,8 @@
 'use strict';
 
 import 'jest';
-// tslint:disable-next-line:no-unused-expression
-import 'babel-core/register';
-// tslint:disable-next-line:no-unused-expression
-import 'babel-polyfill';
+require('babel-core/register');
+require('babel-polyfill');
 
 import get from './get';
 

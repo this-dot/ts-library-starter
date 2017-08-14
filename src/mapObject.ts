@@ -11,12 +11,12 @@ import reduceObject from './reduceObject';
  */
 export default function mapObject(
   object: {},
-  fn: (key: string, value: any) => any,
+  fn: (key: string, value: any) => any
 ) {
   return reduceObject(object, function(result, name, value) {
     return {
       ...result,
-      [name]: fn(name, value),
+      [name]: fn(name, value)
     };
   });
 }

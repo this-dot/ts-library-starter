@@ -1,4 +1,5 @@
-import { lensPath, set as lensSet } from 'ramda';
+import * as lensPath from 'ramda/src/lensPath';
+import * as lensSet from 'ramda/src/set';
 
 /**
  * Return a new object with property at given path replaced with provided value.
@@ -16,7 +17,7 @@ import { lensPath, set as lensSet } from 'ramda';
 export default function set(
   path: Array<string | number>,
   value: any,
-  data: {} | Array<any>,
+  data: {} | Array<any>
 ) {
   let lens = lensPath(path);
   return lensSet(lens, value, data);

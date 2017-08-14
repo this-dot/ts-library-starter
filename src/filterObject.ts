@@ -11,21 +11,18 @@ import reduceObject from './reduceObject';
  * @param object 
  * @param fn 
  */
-export default function filterObject(
-  object: {},
-  fn: (key: string, value: any) => boolean,
-) {
+export default function filterObject(object: {}, fn: (key, value) => boolean) {
   return reduceObject(
     object,
     (result, key, value) => {
       if (fn(key, value)) {
         return {
           ...result,
-          [key]: value,
+          [key]: value
         };
       }
       return result;
     },
-    {},
+    {}
   );
 }

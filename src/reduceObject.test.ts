@@ -1,17 +1,14 @@
 'use strict';
 
 import 'jest';
-// tslint:disable-next-line:no-unused-expression
-import 'babel-core/register';
-// tslint:disable-next-line:no-unused-expression
-import 'babel-polyfill';
+require('babel-core/register');
+require('babel-polyfill');
 
 import reduceObject from './reduceObject';
 
 describe('reduceObject', () => {
   let original = { small: 1, smallish: 2, big: 4 };
-  let callback;
-  let result;
+  let callback, result;
 
   describe('callback use', () => {
     beforeEach(() => {
@@ -34,17 +31,17 @@ describe('reduceObject', () => {
       expect(callback.mock.calls[2]).toEqual([
         { SMALL: 10, SMALLISH: 20 },
         'big',
-        4,
+        4
       ]);
     });
   });
 
   describe('result', () => {
     beforeEach(() => {
-      result = reduceObject(original, (acc, key: string, value: any) => {
+      result = reduceObject(original, (result, key, value) => {
         return {
-          ...acc,
-          [key.toUpperCase()]: value * 10,
+          ...result,
+          [key.toUpperCase()]: value * 10
         };
       });
     });
@@ -55,9 +52,9 @@ describe('reduceObject', () => {
 
     it('returned expected result', () => {
       expect(result).toEqual({
-        BIG: 40,
         SMALL: 10,
         SMALLISH: 20,
+        BIG: 40
       });
     });
   });
