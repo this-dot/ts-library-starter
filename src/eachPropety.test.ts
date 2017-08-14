@@ -1,8 +1,10 @@
 'use strict';
 
 import 'jest';
-require('babel-core/register');
-require('babel-polyfill');
+// tslint:disable-next-line:no-unused-expression
+import 'babel-core/register';
+// tslint:disable-next-line:no-unused-expression
+import 'babel-polyfill';
 
 import eachProperty from './eachProperty';
 

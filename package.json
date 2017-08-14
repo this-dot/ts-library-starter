@@ -4,9 +4,6 @@
   "description": "Immutable Object Operators",
   "main": "dist/main.js",
   "typings": "dist/main.d.ts",
-  "files": [
-    "dist"
-  ],
   "jam": {
     "main": "./dist/main.browser.js"
   },
@@ -27,12 +24,7 @@
     "type": "git",
     "url": "git+https://github.com/this-dot/ioo.git"
   },
-  "keywords": [
-    "typescript",
-    "library",
-    "immutability",
-    "utilities"
-  ],
+  "keywords": ["typescript", "library", "immutability", "utilities"],
   "author": "Hagai Cohen",
   "license": "MIT",
   "bugs": {
@@ -52,24 +44,21 @@
     "dts-bundle": "^0.5.0",
     "jest": "^15.1.1",
     "standard-version": "^2.4.0",
-    "tslint": "^3.15.1",
-    "tslint-loader": "^2.1.5",
-    "typescript": "2.0.0",
+    "tslint": "^5.6.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "2.4.0",
     "typescript-babel-jest": "^0.1.2",
     "webpack": "2.1.0-beta.22",
     "webpack-node-externals": "^1.4.3"
   },
   "dependencies": {
+    "@types/ramda": "^0.24.7",
     "ramda": "0.24.1"
   },
   "jest": {
     "scriptPreprocessor": "node_modules/typescript-babel-jest",
     "testEnvironment": "node",
     "testRegex": ".*\\.test\\.ts$",
-    "moduleFileExtensions": [
-      "ts",
-      "js",
-      "json"
-    ]
+    "moduleFileExtensions": ["ts", "js", "json"]
   }
 }
