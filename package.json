@@ -5,9 +5,10 @@
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "scripts": {
+    "lint": "eslint src/**/*.ts",
     "prebuild": "yarn",
     "build": "tsc",
-    "test": "jest",
+    "test": "npm run lint && jest",
     "test:watch": "npm test -- --watch",
     "coverage": "npm test -- --coverage --no-cache",
     "coverage:watch": "npm run coverage -- --watch",
@@ -29,10 +30,17 @@
     "@types/jest": "^20.0.7",
     "@types/node": "^8.0.22",
     "@types/ramda": "^0.24.7",
+    "eslint": "^4.4.1",
+    "eslint-plugin-typescript": "^0.5.0",
     "jest": "^20.0.4",
     "standard-version": "^2.4.0",
+    "ts-jest": "^20.0.10",
+    "tslint-eslint-rules": "^4.1.1",
     "typescript": "2.4.0",
-    "ts-jest": "^20.0.10"
+    "typescript-eslint-parser": "^5.0.1"
+  },
+  "peerDependencies": {
+    "tslint": "^5.6.0"
   },
   "dependencies": {
     "ramda": "0.24.1"

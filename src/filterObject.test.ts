@@ -28,10 +28,7 @@ describe('filterObject', () => {
 
   describe('result', () => {
     beforeEach(() => {
-      result = filterObject(
-        original,
-        (key, value) => key.indexOf('small') === -1,
-      );
+      result = filterObject(original, key => key.indexOf('small') === -1);
     });
 
     it('returns a new object', () => {
