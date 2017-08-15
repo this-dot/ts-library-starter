@@ -1,11 +1,3 @@
-'use strict';
-
-import 'jest';
-// tslint:disable-next-line:no-unused-expression
-import 'babel-core/register';
-// tslint:disable-next-line:no-unused-expression
-import 'babel-polyfill';
-
 import get from './get';
 
 describe('get', () => {

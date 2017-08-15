@@ -9,7 +9,7 @@ import eachProperty from './eachProperty';
 export default function reduceObject(
   object: {},
   fn: (result: any, key: string, value: any) => any,
-  result: any = {},
+  result: any = {}
 ) {
   eachProperty(object, function(name, value) {
     result = fn(result, name, value);

@@ -1,17 +1,8 @@
-'use strict';
-
-import 'jest';
-// tslint:disable-next-line:no-unused-expression
-import 'babel-core/register';
-// tslint:disable-next-line:no-unused-expression
-import 'babel-polyfill';
-
 import filterObject from './filterObject';
 
 describe('filterObject', () => {
   let original = { small: 1, smallish: 2, big: 4 };
-  let callback;
-  let result;
+  let callback, result;
 
   describe('callback use', () => {
     beforeEach(() => {
@@ -37,10 +28,7 @@ describe('filterObject', () => {
 
   describe('result', () => {
     beforeEach(() => {
-      result = filterObject(
-        original,
-        (key, value) => key.indexOf('small') === -1,
-      );
+      result = filterObject(original, key => key.indexOf('small') === -1);
     });
 
     it('returns a new object', () => {
