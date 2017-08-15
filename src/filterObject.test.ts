@@ -1,9 +1,3 @@
-'use strict';
-
-import 'jest';
-require('babel-core/register');
-require('babel-polyfill');
-
 import filterObject from './filterObject';
 
 describe('filterObject', () => {
@@ -36,7 +30,7 @@ describe('filterObject', () => {
     beforeEach(() => {
       result = filterObject(
         original,
-        (key, value) => key.indexOf('small') === -1
+        (key, value) => key.indexOf('small') === -1,
       );
     });
 

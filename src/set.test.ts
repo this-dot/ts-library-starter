@@ -1,9 +1,3 @@
-'use strict';
-
-import 'jest';
-import 'babel-core/register';
-import 'babel-polyfill';
-
 import set from './set';
 
 describe('set', () => {

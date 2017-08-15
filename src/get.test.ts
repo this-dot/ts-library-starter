@@ -1,9 +1,3 @@
-'use strict';
-
-import 'jest';
-require('babel-core/register');
-require('babel-polyfill');
-
 import get from './get';
 
 describe('get', () => {

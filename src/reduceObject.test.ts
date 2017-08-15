@@ -1,9 +1,3 @@
-'use strict';
-
-import 'jest';
-require('babel-core/register');
-require('babel-polyfill');
-
 import reduceObject from './reduceObject';
 
 describe('reduceObject', () => {
@@ -31,7 +25,7 @@ describe('reduceObject', () => {
       expect(callback.mock.calls[2]).toEqual([
         { SMALL: 10, SMALLISH: 20 },
         'big',
-        4
+        4,
       ]);
     });
   });
@@ -41,7 +35,7 @@ describe('reduceObject', () => {
       result = reduceObject(original, (result, key, value) => {
         return {
           ...result,
-          [key.toUpperCase()]: value * 10
+          [key.toUpperCase()]: value * 10,
         };
       });
     });
@@ -54,7 +48,7 @@ describe('reduceObject', () => {
       expect(result).toEqual({
         SMALL: 10,
         SMALLISH: 20,
-        BIG: 40
+        BIG: 40,
       });
     });
   });
