@@ -3,16 +3,10 @@
   "version": "0.1.3",
   "description": "Immutable Object Operators",
   "main": "dist/main.js",
-  "typings": "dist/main.d.ts",
-  "jam": {
-    "main": "./dist/main.browser.js"
-  },
-  "browser": {
-    "dist/main.js": "./dist/main.browser.js"
-  },
+  "types": "dist/main.d.ts",
   "scripts": {
-    "prebuild": "npm install",
-    "build": "webpack || echo not ok",
+    "prebuild": "yarn",
+    "build": "tsc",
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "coverage": "npm test -- --coverage --no-cache",
@@ -34,28 +28,19 @@
   "devDependencies": {
     "@types/jest": "^0.9.31",
     "@types/node": "^6.0.38",
-    "awesome-typescript-loader": "^2.2.1",
-    "babel-core": "^6.14.0",
-    "babel-loader": "^6.2.5",
-    "babel-polyfill": "^6.13.0",
-    "babel-preset-es2015": "^6.14.0",
-    "browserify": "^13.1.0",
-    "delete-empty": "^0.1.3",
-    "dts-bundle": "^0.5.0",
+    "@types/ramda": "^0.24.7",
     "jest": "^15.1.1",
     "standard-version": "^2.4.0",
-    "tslint": "^3.15.1",
-    "tslint-loader": "^2.1.5",
-    "typescript": "2.0.0",
-    "typescript-babel-jest": "^0.1.2",
-    "webpack": "2.1.0-beta.22",
-    "webpack-node-externals": "^1.4.3"
+    "typescript": "2.4.0",
+    "ts-jest": "^20.0.10"
   },
   "dependencies": {
     "ramda": "0.24.1"
   },
   "jest": {
-    "scriptPreprocessor": "node_modules/typescript-babel-jest",
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
     "testEnvironment": "node",
     "testRegex": ".*\\.test\\.ts$",
     "moduleFileExtensions": ["ts", "js", "json"]
