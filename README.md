@@ -49,14 +49,23 @@ For more code examples, checkout [src/reduce.test.ts](src/reduce.test.ts)
 
 ## filter(path: Array<string | number>, (value: any, index: string | number) => boolean, data: {} | Array)
 
-`filter` operator invokes a function on every item of an object or an array found at given path. If the callback returns a truth value then the item will be included in the object at the given path.
+`filter` operator invokes a callback on every item of an object or an array found at given path. If the callback returns a truth value then the item will be included in the object at the given path.
 
 ```ts
-filter([ 'a', 'b', ( value, index ) => index % 2 === 0, { a: { b: [ 'c', 'd', 'e', 'f' ]}}]);
+filter([ 'a', 'b' ], ( value, index ) => index % 2 === 0, { a: { b: [ 'c', 'd', 'e', 'f' ]}}]);
 //=> { a: { b: [ 'c', 'e' ] } }
 ```
 
 For more code examples, checkout [src/filter.test.ts](src/filter.test.ts)
+
+## map(path: Array<string | number>, (value: any, index: string | number) => boolean, data: {} | Array)
+
+`map` operator invokes a callback on every item of an object or an array found at given path. The result of the callback is used to replace the value at that index. 
+
+```ts
+filter([ 'a', 'b' ], value => value.toUpperCase(), { a: { b: [ 'c', 'd', 'e', 'f' ]}}]);
+//=> { a: { b: [ 'C', 'D', 'E', 'F' ] } }
+```
 
 ## push(path: Array<string | number>, item: any, data: Array | {}): Array | {}
 
