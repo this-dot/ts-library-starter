@@ -84,6 +84,16 @@ get([ 'a', 0, 'b' ], { a: [ { b: 'c' }, { b: 'd' } ]});
 
 For more code examples, checkout [src/get.test.ts](src/get.test.ts)
 
+## push(path: Array<string | number>, item: any, data: Array | {}): Array | {}
+
+`push` pushes an item into the array at the specified path. Returns new objects at every level of the path.
+
+```ts
+push([ 'a', 'b' ], 'c', { a: { b: [] } });
+//=> { a: { b: [ 'c' ] } }
+```
+
+
 # Credit
 
 Big thanks to [Charles Lowell](http://github.com/cowboyd) who wrote the map/reduceObject functions and showed me how to use lenses.
