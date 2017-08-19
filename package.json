@@ -1,6 +1,6 @@
 {
   "name": "ioo",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Immutable Object Operators",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -19,7 +19,12 @@
     "type": "git",
     "url": "git+https://github.com/this-dot/ioo.git"
   },
-  "keywords": ["typescript", "library", "immutability", "utilities"],
+  "keywords": [
+    "typescript",
+    "library",
+    "immutability",
+    "utilities"
+  ],
   "author": "Hagai Cohen",
   "license": "MIT",
   "bugs": {
@@ -50,6 +55,10 @@
     },
     "testEnvironment": "node",
     "testRegex": ".*\\.test\\.ts$",
-    "moduleFileExtensions": ["ts", "js", "json"]
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
   }
 }
