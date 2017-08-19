@@ -19,12 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/this-dot/ioo.git"
   },
-  "keywords": [
-    "typescript",
-    "library",
-    "immutability",
-    "utilities"
-  ],
+  "keywords": ["typescript", "library", "immutability", "utilities"],
   "author": "Hagai Cohen",
   "license": "MIT",
   "bugs": {
@@ -42,12 +37,11 @@
     "ts-jest": "^20.0.10",
     "tslint-eslint-rules": "^4.1.1",
     "typescript": "2.4.0",
-    "typescript-eslint-parser": "^5.0.1"
-  },
-  "peerDependencies": {
+    "typescript-eslint-parser": "^5.0.1",
     "tslint": "^5.6.0"
   },
   "dependencies": {
+    "lodash.isobject": "^3.0.2",
     "ramda": "0.24.1"
   },
   "jest": {
@@ -56,10 +50,6 @@
     },
     "testEnvironment": "node",
     "testRegex": ".*\\.test\\.ts$",
-    "moduleFileExtensions": [
-      "ts",
-      "js",
-      "json"
-    ]
+    "moduleFileExtensions": ["ts", "js", "json"]
   }
 }

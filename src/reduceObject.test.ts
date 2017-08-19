@@ -20,19 +20,15 @@ describe('reduceObject', () => {
       expect(result).toEqual({ SMALL: 10, SMALLISH: 20, BIG: 40 });
     });
     it('was invoked with expected arguments', () => {
-      expect(callback.mock.calls[0]).toEqual([{}, 'small', 1]);
-      expect(callback.mock.calls[1]).toEqual([{ SMALL: 10 }, 'smallish', 2]);
-      expect(callback.mock.calls[2]).toEqual([
-        { SMALL: 10, SMALLISH: 20 },
-        'big',
-        4,
-      ]);
+      expect(callback.mock.calls[0]).toEqual([{}, 1, 'small']);
+      expect(callback.mock.calls[1]).toEqual([{ SMALL: 10 }, 2, 'smallish']);
+      expect(callback.mock.calls[2]).toEqual([{ SMALL: 10, SMALLISH: 20 }, 4, 'big']);
     });
   });
 
   describe('result', () => {
     beforeEach(() => {
-      result = reduceObject(original, (result, key, value) => {
+      result = reduceObject(original, (result, value, key: string) => {
         return {
           ...result,
           [key.toUpperCase()]: value * 10,

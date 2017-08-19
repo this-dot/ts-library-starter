@@ -20,15 +20,15 @@ describe('filterObject', () => {
       expect(result).toEqual({ smallish: 2 });
     });
     it('passed key and value', () => {
-      expect(callback.mock.calls[0]).toEqual(['small', 1]);
-      expect(callback.mock.calls[1]).toEqual(['smallish', 2]);
-      expect(callback.mock.calls[2]).toEqual(['big', 4]);
+      expect(callback.mock.calls[0]).toEqual([1, 'small']);
+      expect(callback.mock.calls[1]).toEqual([2, 'smallish']);
+      expect(callback.mock.calls[2]).toEqual([4, 'big']);
     });
   });
 
   describe('result', () => {
     beforeEach(() => {
-      result = filterObject(original, key => key.indexOf('small') === -1);
+      result = filterObject(original, (value, key: string) => key.indexOf('small') === -1);
     });
 
     it('returns a new object', () => {

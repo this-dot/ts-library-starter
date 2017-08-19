@@ -1,3 +1,4 @@
+import { IReduceCallback } from './Interfaces';
 import eachProperty from './eachProperty';
 
 /**
@@ -6,13 +7,9 @@ import eachProperty from './eachProperty';
  * @param fn 
  * @param result 
  */
-export default function reduceObject(
-  object: {},
-  fn: (result: any, key: string, value: any) => any,
-  result: any = {}
-) {
+export default function reduceObject(object: {}, reducer: IReduceCallback, accumulator: any = {}) {
   eachProperty(object, function(name, value) {
-    result = fn(result, name, value);
+    accumulator = reducer(accumulator, value, name);
   });
-  return result;
+  return accumulator;
 }
