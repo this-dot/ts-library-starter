@@ -1,3 +1,4 @@
+import { IMapCallback } from './Interfaces';
 import reduceObject from './reduceObject';
 
 /**
@@ -5,18 +6,15 @@ import reduceObject from './reduceObject';
  * those keys into new objects. The return value will be an object 
  * with the same set of keys, but a different set of values. E.g.
  *
- * > mapObject({first: 1, second: 2}, (key, value)=> value *2)
+ * > mapObject({first: 1, second: 2}, (value, key) => value *2)
  *
  *   {first: 2, second: 4}
  */
-export default function mapObject(
-  object: {},
-  fn: (key: string, value: any) => any,
-) {
-  return reduceObject(object, function(result, name, value) {
+export default function mapObject(object: {}, callback: IMapCallback) {
+  return reduceObject(object, (result, value, index) => {
     return {
       ...result,
-      [name]: fn(name, value),
+      [index]: callback(value, index),
     };
   });
 }

@@ -16,14 +16,14 @@ describe('mapObject', () => {
     });
 
     it('was called with key and value', () => {
-      expect(callback.mock.calls[0]).toEqual(['first', 1]);
-      expect(callback.mock.calls[1]).toEqual(['second', 2]);
+      expect(callback.mock.calls[0]).toEqual([1, 'first']);
+      expect(callback.mock.calls[1]).toEqual([2, 'second']);
     });
   });
 
   describe('result', () => {
     beforeEach(() => {
-      result = mapObject(original, (key, value) => value * 2);
+      result = mapObject(original, (value, key) => value * 2);
     });
 
     it('returns a new object', () => {

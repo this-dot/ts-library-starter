@@ -1,3 +1,4 @@
+import { IFilterCallback } from './Interfaces';
 import reduceObject from './reduceObject';
 
 /**
@@ -8,17 +9,14 @@ import reduceObject from './reduceObject';
  *  
  *  { small: 1, smallish: 2 } 
  * 
- * @param object 
- * @param fn 
+ * @param object: {}
+ * @param callback: IFilterCallback 
  */
-export default function filterObject(
-  object: {},
-  fn: (key: string, value: any) => boolean,
-) {
+export default function filterObject(object: {}, callback: IFilterCallback) {
   return reduceObject(
     object,
-    (result, key, value) => {
-      if (fn(key, value)) {
+    (result, value, key) => {
+      if (callback(value, key)) {
         return {
           ...result,
           [key]: value,
@@ -26,6 +24,6 @@ export default function filterObject(
       }
       return result;
     },
-    {},
+    {}
   );
 }
