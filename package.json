@@ -1,6 +1,6 @@
 {
   "name": "ioo",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Immutable Object Operators",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
